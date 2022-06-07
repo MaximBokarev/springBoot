@@ -26,7 +26,7 @@ public class Actor {
     @Column
     private String login;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @NotFound(action = NotFoundAction.IGNORE)
     @JoinTable(name = "actor_roles",
             joinColumns = @JoinColumn(name = "actor_id"),

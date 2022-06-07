@@ -23,7 +23,7 @@ public class Roles {
     @Column
     private String name;
 
-    @ManyToMany(mappedBy = "roles")
-    @NotFound(action = NotFoundAction.IGNORE)
+    @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
+//    @NotFound(action = NotFoundAction.IGNORE)
     private List<Actor> actors;
 }
