@@ -3,8 +3,7 @@ package com.javaguides.springboot.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.NotFound;
-import org.hibernate.annotations.NotFoundAction;
+
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,6 +23,5 @@ public class Roles {
     private String name;
 
     @ManyToMany(mappedBy = "roles", cascade = CascadeType.ALL)
-//    @NotFound(action = NotFoundAction.IGNORE)
     private List<Actor> actors;
 }
